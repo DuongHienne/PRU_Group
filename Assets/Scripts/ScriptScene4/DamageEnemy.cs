@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public PlayerHealthInteraction playerHealth;
-    public int damage = 20;
+    public int damage = 30;
 
     //This func is called (it runs) whenever something enters the enemy's collider"
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D trig)
     {
-        if (collision.gameObject.tag == "Player")
+
+        if (trig.CompareTag("Ethan"))
         {
-            playerHealth.TakeDamage(damage);
+            Debug.Log("Enemy hit:" + trig.gameObject.name);
+            PlayerHealthInteraction targetHealth = trig.GetComponent<PlayerHealthInteraction>();
+            if (targetHealth != null)
+            {
+                targetHealth.TakeDamage(damage);
+            }
         }
+
     }
 
 

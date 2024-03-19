@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class S3_MovementEthan : MonoBehaviour
@@ -33,7 +34,7 @@ public class S3_MovementEthan : MonoBehaviour
     bool facingRight = true;
     //bool crouchPressed;
     Scene2_AudioManager audioManager;
-
+    public TextMeshProUGUI namePlayer;
     // Start is called before the first frame update
 
     private void Awake()
@@ -47,6 +48,7 @@ public class S3_MovementEthan : MonoBehaviour
         currentHealth = ManageEthanBlood.instance.scene1_CurrentHealth;
         //Debug.Log("current:" + ManageEthanBlood.instance.scene1_CurrentHealth);
         fillBar.UpdateBar(currentHealth, maxHealth);
+        namePlayer.text = ManageInputName.instance.NamePlayer + ":";
     }
 
     // Update is called once per frame

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using TMPro;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using Transform = UnityEngine.Transform;
@@ -36,6 +37,7 @@ public class Scence2_MovementEthan : MonoBehaviour
     bool facingRight = true;
     //bool crouchPressed;
     Scene2_AudioManager audioManager;
+    public TextMeshProUGUI namePlayer;
 
     // Start is called before the first frame update
 
@@ -50,6 +52,7 @@ public class Scence2_MovementEthan : MonoBehaviour
         currentHealth = ManageEthanBlood.instance.scene1_CurrentHealth;
         //Debug.Log("current:" + ManageEthanBlood.instance.scene1_CurrentHealth);
         fillBar.UpdateBar(currentHealth, maxHealth);
+        namePlayer.text = ManageInputName.instance.NamePlayer + ":";
     }
 
     // Update is called once per frame

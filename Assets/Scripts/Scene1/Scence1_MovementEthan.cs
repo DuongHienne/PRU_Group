@@ -6,6 +6,7 @@ using UnityEngine.Timeline;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using Transform = UnityEngine.Transform;
 using UnityEngine.UI;
+using TMPro;
 
 public class Scence1_MovementEthan : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class Scence1_MovementEthan : MonoBehaviour
     //bool crouchPressed;
     Scene1_AudioManager audioManager;
 
+    public TextMeshProUGUI namePlayer;
     // Start is called before the first frame update
 
     private void Awake()
@@ -52,6 +54,8 @@ public class Scence1_MovementEthan : MonoBehaviour
         currentHealth = maxHealth;
         fillBar.UpdateBar(currentHealth, maxHealth);
         ManageEthanBlood.instance.scene1_CurrentHealth = currentHealth;
+        namePlayer.text = ManageInputName.instance.NamePlayer + ":";
+        
     }
 
    

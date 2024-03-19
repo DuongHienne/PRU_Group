@@ -1,6 +1,7 @@
 using EthanTheHero;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerAttackEnemy : MonoBehaviour
@@ -14,13 +15,18 @@ public class PlayerAttackEnemy : MonoBehaviour
     public int damage;
     private EnemyBehavior enemyBehavior;
     private PlayerAttackMethod method;
-
+    public TextMeshProUGUI namePlayer;
 
     void Awake()
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
     }
 
+    void Start()
+    {
+        namePlayer.text = ManageInputName.instance.NamePlayer + ":";
+
+    }
 
     public void Attack()
     {
