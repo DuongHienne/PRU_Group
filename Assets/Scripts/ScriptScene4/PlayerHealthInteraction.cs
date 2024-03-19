@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,13 +12,14 @@ public class PlayerHealthInteraction : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public FillBar healthbar;
+    public TextMeshProUGUI namePlayer;
 
-   
 
     void Start()
     {
         currentHealth = ManageEthanBlood.instance.scene1_CurrentHealth;
         healthbar.UpdateBar(currentHealth, maxHealth);
+        namePlayer.text = ManageInputName.instance.NamePlayer + ":";
     }
 
     /*void Update()

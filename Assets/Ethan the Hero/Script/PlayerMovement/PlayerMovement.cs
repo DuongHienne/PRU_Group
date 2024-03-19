@@ -48,7 +48,7 @@ namespace EthanTheHero
 		{
 			myBody = GetComponent<Rigidbody2D>();
 			myAnim = GetComponent<Animator>();
-            audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Scene2_AudioManager>();
+            //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<Scene2_AudioManager>();
 
         }
 		void Update()
